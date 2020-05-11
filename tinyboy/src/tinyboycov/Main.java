@@ -30,27 +30,30 @@ import tinyboy.views.TinyBoyPeripheral;
  *
  */
 public class Main {
-	/**
-	 * The default set of peripherals.
-	 */
-	public static JPeripheral.Descriptor[] PERIPHERALS = {
+  /**
+   * The default set of peripherals.
+   */
+  public static JPeripheral.Descriptor[] PERIPHERALS = {
 
-	};
-	/**
-	 * The default set of views.
-	 */
-	public static JAvrView.Descriptor[] VIEWS = {
-			CodeView.DESCRIPTOR,
-			DataView.DESCRIPTOR
-	};
-	public static void main(String[] args) throws IOException {
-		// Construct the tinyBoy emulator
-		TinyBoyEmulator tinyBoy = new TinyBoyEmulator();
-		// Construct the main simulation window
-		SimulationWindow sim = new SimulationWindow(tinyBoy.getAVR(), PERIPHERALS, VIEWS);
-		// Finally, construct the TinyBoy view
-		JPeripheral p = new TinyBoyPeripheral(tinyBoy);
-		sim.addPeripheral(p);
-	}
+  };
+  /**
+   * The default set of views.
+   */
+  public static JAvrView.Descriptor[] VIEWS = { CodeView.DESCRIPTOR, DataView.DESCRIPTOR };
+
+  /**
+   * Main class.
+   * @param args = argument. 
+   * @throws IOException = exception. 
+   */
+  public static void main(String[] args) throws IOException {
+    // Construct the tinyBoy emulator
+    TinyBoyEmulator tinyBoy = new TinyBoyEmulator();
+    // Construct the main simulation window
+    SimulationWindow sim = new SimulationWindow(tinyBoy.getAVR(), PERIPHERALS, VIEWS);
+    // Finally, construct the TinyBoy view
+    JPeripheral p = new TinyBoyPeripheral(tinyBoy);
+    sim.addPeripheral(p);
+  }
 
 }
