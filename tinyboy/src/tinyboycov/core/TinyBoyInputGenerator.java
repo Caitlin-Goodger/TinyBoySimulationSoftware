@@ -35,6 +35,23 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
     // illustrates how to create input sequences!
     worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.UP));
     worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.LEFT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.RIGHT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.DOWN));
+    
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.UP));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.LEFT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.RIGHT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.DOWN));
+    
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.UP));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.LEFT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.RIGHT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.DOWN));
+    
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.UP));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.LEFT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.RIGHT));
+    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.DOWN));
   }
 
   @Override
