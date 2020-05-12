@@ -28,7 +28,7 @@ public class Part3_Tests {
    * Enable/disable the GUI. This can improve overall performance (especially for
    * multiple threads).
    */
-  private static final boolean GUI_ENABLED = false;
+  private static final boolean GUI_ENABLED = true;
 
   @Test
   public void test_01() throws Exception {
