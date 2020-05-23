@@ -33,15 +33,21 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
   public TinyBoyInputGenerator() {
     // FIXME: this is a very simplistic and poor implementation. However, it
     // illustrates how to create input sequences!
-    //add2Buttons();
-    ControlPad.Button[] buttons = new ControlPad.Button[10];
-    recursiveCall(2,0,buttons);
+    int max = 2;
+    ControlPad.Button[] buttons = new ControlPad.Button[max];
+    recursivelyCreateInputSequence(max,0,buttons);
   }
   
 
 
-
-  private void recursiveCall(int max, int current,ControlPad.Button[] buttons) {
+  /**
+   * Given a size n, the method recursively creates all the input sequences of that size 
+   * and adds each sequence to the worklist. 
+   * @param max = max number of items needed = n.
+   * @param current = current item that the recursive method is on. 
+   * @param buttons = current input sequence stored as an Array. 
+   */
+  private void recursivelyCreateInputSequence(int max, int current,ControlPad.Button[] buttons) {
     if (max == current) {
       worklist.add(new TinyBoyInputSequence(buttons));
       return;
@@ -53,7 +59,7 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
       for (int j = 0; j < max; j++) {
         newButtons[j] = buttons[j];
       }
-      recursiveCall(max,current + 1,newButtons);
+      recursivelyCreateInputSequence(max,current + 1,newButtons);
     }
   }
 
