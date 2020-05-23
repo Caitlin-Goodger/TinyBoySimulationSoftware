@@ -58,40 +58,6 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
   }
 
 
-
-
-  /**
-   * Added two button combinations to the list. 
-   */
-  public void add2Buttons() {
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.UP));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.LEFT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.RIGHT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.LEFT, ControlPad.Button.DOWN));
-    
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.UP));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.LEFT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.RIGHT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.UP, ControlPad.Button.DOWN));
-    
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.UP));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.LEFT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.RIGHT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.DOWN, ControlPad.Button.DOWN));
-    
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.UP));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.LEFT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.RIGHT));
-    worklist.add(new TinyBoyInputSequence(ControlPad.Button.RIGHT, ControlPad.Button.DOWN));
-  
-    
-    
-  
-  
-  
-  
-  }
-
   @Override
   public boolean hasMore() {
     return worklist.size() > 0;
