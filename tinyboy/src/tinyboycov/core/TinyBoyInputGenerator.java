@@ -33,7 +33,7 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
   public TinyBoyInputGenerator() {
     // FIXME: this is a very simplistic and poor implementation. However, it
     // illustrates how to create input sequences!
-    int max = 2;
+    int max = 10;
     ControlPad.Button[] buttons = new ControlPad.Button[max];
     recursivelyCreateInputSequence(max,0,buttons);
   }
@@ -49,7 +49,7 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
    */
   private void recursivelyCreateInputSequence(int max, int current,ControlPad.Button[] buttons) {
     if (max == current) {
-      worklist.add(new TinyBoyInputSequence(buttons));
+      this.worklist.add(new TinyBoyInputSequence(buttons));
       return;
     }
     
@@ -66,17 +66,16 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
 
   @Override
   public boolean hasMore() {
-    return worklist.size() > 0;
+    return this.worklist.size() > 0;
   }
 
   @Override
   public TinyBoyInputSequence generate() {
-    if (!worklist.isEmpty()) {
+    if (!this.worklist.isEmpty()) {
       // remove last item from worklist
-      return worklist.remove(worklist.size() - 1);
-    } else {
-      return null;
+      return this.worklist.remove(this.worklist.size() - 1);
     }
+    return null;
   }
 
   /**
@@ -101,7 +100,7 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
    *
    * @param lhs The one which may be subsumed.
    * @param rhs The one which may be subsuming.
-   * @return
+   * @return = return if the given input is subsumed by another
    */
   public boolean subsumedBy(BitSet lhs, BitSet rhs) {
     for (int i = lhs.nextSetBit(0); i >= 0; i = lhs.nextSetBit(i + 1)) {
@@ -116,8 +115,8 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
    * Reduce a given set of items to at most <code>n</code> inputs by randomly
    * sampling.
    *
-   * @param inputs
-   * @param n
+   * @param inputs = list of inputs to reduce.
+   * @param n = size to reduce to. 
    */
   private static <T> void randomSample(List<T> inputs, int n) {
     // Randomly shuffle inputs

@@ -10,7 +10,7 @@ public class Part4_Tests {
    * Configure number of threads to use. You may need to hand tune this a little
    * to maximum performance, which makes a real difference on the big domains.
    */
-  private static final int NTHREADS = 1; // Runtime.getRuntime().availableProcessors();
+  private static final int NTHREADS = 4; // Runtime.getRuntime().availableProcessors();
   /**
    * Number of inputs each thread to process in one go. You may need to hand tune
    * this a little to maximum performance, which makes a real difference on the
@@ -28,7 +28,7 @@ public class Part4_Tests {
    * Enable/disable the GUI. This can improve overall performance (especially for
    * multiple threads).
    */
-  private static final boolean GUI_ENABLED = true;
+  private static final boolean GUI_ENABLED = false;
 
   @Test
   public void test_01() throws Exception {
