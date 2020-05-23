@@ -10,7 +10,7 @@ public class Part3_Tests {
    * Configure number of threads to use. You may need to hand tune this a little
    * to maximum performance, which makes a real difference on the big domains.
    */
-  private static final int NTHREADS = 1; // Runtime.getRuntime().availableProcessors();
+  private static final int NTHREADS = 4; // Runtime.getRuntime().availableProcessors();
   /**
    * Number of inputs each thread to process in one go. You may need to hand tune
    * this a little to maximum performance, which makes a real difference on the
@@ -22,7 +22,7 @@ public class Part3_Tests {
    * debugging, but remember that the automated marking script will enforce a
    * timeout.
    */
-  private static final boolean HARD_TIMEOUT = true;
+  private static final boolean HARD_TIMEOUT = false;
 
   /**
    * Enable/disable the GUI. This can improve overall performance (especially for
