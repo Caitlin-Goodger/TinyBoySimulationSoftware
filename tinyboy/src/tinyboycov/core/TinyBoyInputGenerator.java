@@ -68,12 +68,20 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
     }
   }
 
-
+  /**
+   * Check if there are move values still in the worklist.
+   * @return = return if there are still items in worklist.
+  */
   @Override
   public boolean hasMore() {
     return this.worklist.size() > 0;
   }
 
+  /**
+   * If the worklist isn't empty, then remove the last item of worklist
+   * If it is empty, return null.
+   *  @return = return the last item if there is on, or null if there isn't. 
+   */
   @Override
   public TinyBoyInputSequence generate() {
     if (!this.worklist.isEmpty()) {
