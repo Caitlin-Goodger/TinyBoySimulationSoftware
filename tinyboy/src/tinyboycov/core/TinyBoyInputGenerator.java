@@ -32,8 +32,6 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
    * Constructor for class.
    */
   public TinyBoyInputGenerator() {
-    // FIXME: this is a very simplistic and poor implementation. However, it
-    // illustrates how to create input sequences!
     int max = 10;
     ControlPad.Button[] buttons = new ControlPad.Button[max];
     recursivelyCreateInputSequence(max,0,buttons);
