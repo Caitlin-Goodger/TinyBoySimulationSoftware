@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 import tinyboy.core.ControlPad;
+import tinyboy.core.ControlPad.Button;
 import tinyboy.core.TinyBoyInputSequence;
 import tinyboy.util.AutomatedTester;
 
@@ -36,6 +37,8 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
     int max = 10;
     ControlPad.Button[] buttons = new ControlPad.Button[max];
     recursivelyCreateInputSequence(max,0,buttons);
+    ArrayList<Button> list = new ArrayList<>();
+    randomSample(list,0);
   }
   
 
@@ -102,7 +105,7 @@ public class TinyBoyInputGenerator implements AutomatedTester.InputGenerator<Tin
    * @param rhs The one which may be subsuming.
    * @return = return if the given input is subsumed by another
    */
-  public boolean subsumedBy(BitSet lhs, BitSet rhs) {
+  public static boolean subsumedBy(BitSet lhs, BitSet rhs) {
     for (int i = lhs.nextSetBit(0); i >= 0; i = lhs.nextSetBit(i + 1)) {
       if (!rhs.get(i)) {
         return false;
